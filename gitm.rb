@@ -14,7 +14,7 @@ class Gitm < Formula
       sha256 "7a27293b3290125fd7b7d28de8b4d2190c7c7bd343987cc15080e603ca5a9804"
 
       def install
-        bin.install "gitm"
+        bin.install "gitm_0.0.1_darwin_amd64" => "gitm"
       end
     end
     if Hardware::CPU.arm?
@@ -22,7 +22,7 @@ class Gitm < Formula
       sha256 "fbdf50449fbf38d6360a86e246afed2718ca4729ecbd3a6a598990507a33414d"
 
       def install
-        bin.install "gitm"
+        bin.install "gitm_0.0.1_darwin_arm64" => "gitm"
       end
     end
   end
@@ -34,7 +34,7 @@ class Gitm < Formula
         sha256 "be454be5c9337edcf7550b30920459c72026141eb03d69544222bddca887a847"
 
         def install
-          bin.install "gitm"
+          bin.install "gitm_0.0.1_linux_amd64" => "gitm"
         end
       end
     end
@@ -44,13 +44,15 @@ class Gitm < Formula
         sha256 "b67c47983390e9357ae37de97254403d6b11bb59fd86ca8dd708e464c239bfe1"
 
         def install
-          bin.install "gitm"
+          bin.install "gitm_0.0.1_linux_arm64" => "gitm"
         end
       end
     end
   end
 
   test do
+    # Display bin folder path
+    system "echo", "#{bin}"
     system "#{bin}/gitm", "version"
   end
 end
