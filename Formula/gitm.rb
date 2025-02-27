@@ -5,24 +5,26 @@
 class Gitm < Formula
   desc "Git Manager CLI tool"
   homepage "https://github.com/alexDouze/git-manager"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/alexDouze/git-manager/releases/download/v0.0.2/gitm_0.0.2_darwin_amd64"
-      sha256 "d0ac306d902edd18fefca546c93a83bdf6680161c3a7947466f91a904e95083b"
+      url "https://github.com/alexDouze/git-manager/releases/download/v0.0.3/gitm_0.0.3_darwin_amd64"
+      sha256 "fc4001956bd251d7e806b82551aa6027255dad56f2592a4b47e0a44254cc9d5d"
 
       def install
-        bin.install "gitm_0.0.2_darwin_amd64" => "gitm"
+        bin.install "gitm_0.0.3_darwin_amd64" => "gitm"
+        generate_completions_from_executable(bin/"gitm", "completions")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/alexDouze/git-manager/releases/download/v0.0.2/gitm_0.0.2_darwin_arm64"
-      sha256 "d64ee61197ab119274cdbf7836be1e0c4f2f8b5bd4cd6570edfd981b28df6e5f"
+      url "https://github.com/alexDouze/git-manager/releases/download/v0.0.3/gitm_0.0.3_darwin_arm64"
+      sha256 "fd65d5ea863bbc2278f024ac47029745c3922d2b18477eae6c19897b95379cb4"
 
       def install
-        bin.install "gitm_0.0.2_darwin_arm64" => "gitm"
+        bin.install "gitm_0.0.3_darwin_arm64" => "gitm"
+        generate_completions_from_executable(bin/"gitm", "completions")
       end
     end
   end
@@ -30,21 +32,23 @@ class Gitm < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/alexDouze/git-manager/releases/download/v0.0.2/gitm_0.0.2_linux_amd64"
-        sha256 "85392d5e2a5a072e66185598e90c5d5f4e9554c4b01d8a364dc63c62627aaf3e"
+        url "https://github.com/alexDouze/git-manager/releases/download/v0.0.3/gitm_0.0.3_linux_amd64"
+        sha256 "630bf87816a1a882b74080873d47eadd49a1372d4563e7b0994d5872b3b52de1"
 
         def install
-          bin.install "gitm_0.0.2_linux_amd64" => "gitm"
+          bin.install "gitm_0.0.3_linux_amd64" => "gitm"
+          generate_completions_from_executable(bin/"gitm", "completions")
         end
       end
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/alexDouze/git-manager/releases/download/v0.0.2/gitm_0.0.2_linux_arm64"
-        sha256 "2819d32349ff3604cd86ded6ebbbc4e8859a4540682d80245450b43d143ebf84"
+        url "https://github.com/alexDouze/git-manager/releases/download/v0.0.3/gitm_0.0.3_linux_arm64"
+        sha256 "1b5b61ec0425f629e9bb3d40a1b787cc9b76084bcfde05a61ca5eb4bcd84ac72"
 
         def install
-          bin.install "gitm_0.0.2_linux_arm64" => "gitm"
+          bin.install "gitm_0.0.3_linux_arm64" => "gitm"
+          generate_completions_from_executable(bin/"gitm", "completions")
         end
       end
     end
